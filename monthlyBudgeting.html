@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css"> <!--links styles.css -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"><!-- google fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Monthly Budgeting</title>
+
+
+</head>
+
+<body>
+  <div class="bg-black text-white py-4 text-center oswaldtext">
+    <a href="index.html"><img src="Images/theGainPlanLogo.png" class="logo"></a>
+    <h1>Monthly Budgeting</h1>
+  </div>
+
+  <!-- bootstrap navbar, source: https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_navbar_color&stacked=h-->
+  <nav class="navbar navbar-expand-sm oswaldtext bg-black navbar-dark sticky-top">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ourServices.html">Our Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="monthlyBudgeting.html">Monthly Budgeting</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="macroCalculator.html">Macronutrient Calculator</a>
+        <li class="nav-item">
+          <a class="nav-link" href="game.html">Game</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+
+
+  <div class="row">
+    <div class="col text-center robototext">
+      <form>
+        <table class="userInputTable mx-auto table-borderless">
+          <tr>
+          <tr>
+            <td>What is your monthly salary after tax:</td>
+            <td>
+              <input type="number" class="form-control" placeholder="eg. 2630" id="monthlyIncomeInput">
+            </td>
+          </tr>
+          <tr>
+            <td> How much is your monthly rent?</td>
+            <td>
+              <input type="number" class="form-control" placeholder="eg. 700" id="rent">
+            </td>
+          </tr>
+          <tr>
+            <td>Total bills including car and transport:</td>
+            <td>
+              <input type="number" class="form-control" placeholder="eg. 600" id="bills">
+            </td>
+          </tr>
+          <tr>
+            <td>How much money do you need for food per week? </td>
+            <td>
+              <input type="number" class="form-control" placeholder="eg. 100" id="food">
+            </td>
+          </tr>
+          <tr>
+            <td>How much free spending money do you need weekly?</td>
+            <td>
+              <input type="number" class="form-control" placeholder="eg. 100" id="free">
+            </td>
+          </tr>
+
+        </table>
+        <button type="button" id="btnPlay" onclick="calculateBudget();" class="btn-dark mt-3 w-10">Calculate</button>
+      </form>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col text-center robototext">
+      <form>
+        <table class="userInputTable mx-auto">
+          <tr>
+            <td>
+              Total monthly income:
+            </td>
+            <td>
+              <label id="monthlyIncomeOutput">--</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Total monthly expenses:
+            </td>
+            <td>
+              <label id="monthlyExpenses">--</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Monthly savings:
+            </td>
+            <td>
+              <label id="monthlySavings">--</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Yearly savings:
+            </td>
+            <td>
+              <label id="yearlySavings">--</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              After <input type="number" class="smallInputBox" id="yearsSavingsInput"></input> years:
+            </td>
+            <td>
+              <label id="multiYearSavings">--</label>
+            </td>
+          </tr>
+
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function calculateBudget() {
+      var monthlyIncomeInput = Number(document.getElementById("monthlyIncomeInput").value);
+      var rent  =  Number(document.getElementById("rent").value);
+      var bills =  Number(document.getElementById("bills").value);
+      var food  =  Number(document.getElementById("food").value);
+      var free  =  Number(document.getElementById("free").value);
+      var yearsSavingsInput = Number(document.getElementById("yearsSavingsInput").value);
+
+      /* just outputs income at the bottom */
+      document.getElementById("monthlyIncomeOutput").innerHTML = monthlyIncomeInput.toFixed(0);
+
+      /*Calculates monthly expenses*/
+      var monthlyExpenses = rent+bills+food+free;
+      document.getElementById("monthlyExpenses").innerHTML = monthlyExpenses.toFixed(0);
+
+      /*calculates monthly savings*/
+      var monthlySavings = monthlyIncomeInput-monthlyExpenses;
+      document.getElementById("monthlySavings").innerHTML = monthlySavings.toFixed(0);
+
+      var yearlySavings = monthlySavings*12;
+      document.getElementById("yearlySavings").innerHTML = yearlySavings.toFixed(0);
+
+      /*savings after n years*/
+      var multiYearSavings = yearsSavingsInput*yearlySavings;
+      document.getElementById("multiYearSavings").innerHTML = multiYearSavings.toFixed(0);
+    }
+
+  </script>
+</body>
+</html>

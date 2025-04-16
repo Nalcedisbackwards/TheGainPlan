@@ -1,0 +1,81 @@
+/* ------ fonts ------ */
+.oswaldtext {
+    font-family: "Oswald", sans-serif;
+}
+.robototext {
+    font-family: "Roboto", serif;
+}
+.montserrattext {
+    font-family: "Montserrat", serif;
+}
+/* --- End of fonts --- */
+
+h1, h2, h3, h5{
+    color: #F1C27D; /* Gold colour that matches the background */
+    text-shadow: 2px 2px 4px rgba(0,0,0, 0.8);
+}
+
+.logo { /*full stop for class selector (not element selector */
+    width: 120px;
+    position: absolute; /* CSS Layout - The position Property. W3 Schools */
+    left: 20px; /* Position on the left */
+}
+
+
+.col{
+    border: 5px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    margin:  10px;
+    padding: 20px;
+    background-clip: padding-box;/*shows background in between the boxes*/
+}
+
+.row{
+    padding:0 20px;
+}
+
+img{
+    width:100%
+}
+
+/*rgba reference: https://www.w3schools.com/css/css_colors_rgb.asp */
+.col{background-color: rgba(20, 20, 20, 0.3);
+    backdrop-filter: blur(6px); 
+    color: white;
+} 
+
+body{ /*image ref: https://pixabay.com/illustrations/art-design-damask-background-3561710/ */
+    background-image: url("../Images/designImages/blackAndGold.jpg");
+    background-size: cover;
+}
+
+.smallInputBox{
+    width:40px;
+}
+
+.indexIntroText{
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.indexIntroList{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.singleColumn{ /* everything in col from above but needed to remove it being 100% width that comes from bopotstrap */
+    border: 5px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    margin:  10px;
+    padding: 10px;
+    background-clip: padding-box;/*shows background in between the boxes*/
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(20, 20, 20, 0.3);
+    backdrop-filter: blur(6px); 
+    color: white;
+}
+
+.serviceImage{
+    width:80%;
+}
