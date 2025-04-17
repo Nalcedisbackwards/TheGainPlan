@@ -45,7 +45,7 @@ img{
 } 
 
 body{ /*image ref: https://pixabay.com/illustrations/art-design-damask-background-3561710/ */
-    background-image: url("../images/designImages/blackAndGold.jpg");
+    background-image: url("../images/designImages/blackAndGold.webp");
     background-size: cover;
 }
 
