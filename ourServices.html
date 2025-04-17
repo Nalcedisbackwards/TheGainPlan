@@ -18,7 +18,7 @@
 
 <body>
   <div class="bg-black text-white py-4 text-center oswaldtext">
-    <a href="index.html"><img src="images/theGainPlanLogo.png" class="logo"></a>
+    <a href="index.html"><img src="images/theGainPlanLogo.png" class="logo" alt="The Gain Plan Logo"></a>
     <h1>Our Services</h1>
   </div>
 
@@ -49,17 +49,17 @@
 
 
   <div class="row">
-    <div class="col text-center montserrattext"><img class="serviceImage" src="images/budgetImage.jpg"
+    <div class="col text-center montserrattext"><img class="serviceImage" src="images/budgetImage.jpg" alt="Budget planning illustration"
         onclick="showCaption('budgetCaption', 'Plan your monthly spending!')"> 
         <!-- when the user clicks,showCaption(id, text) puts the "text" in the position that the id is tagged in -->
       <!-- ref https://pixabay.com/photos/calculator-calculation-insurance-385506/-->
-      <h5 id="budgetCaption" class="serviceCaption"> </h5>
+      <h5 id="budgetCaption" class="serviceCaption" aria-live="polite">Click the image to learn more</h5>
     </div>
 
     <div class="col text-center montserrattext"><img class="serviceImage" src="images/foodImage.jpg"
         onclick="showCaption('foodCaption', 'Build your custom diet plan!')">
       <!-- ref https://pixabay.com/photos/healthy-food-fruits-diet-5506822/-->
-      <h5 id="foodCaption" class="serviceCaption"> </h5>
+      <h5 id="foodCaption" class="serviceCaption" aria-live="polite">Click the image to learn more</h5>
     </div>
   </div>
 
