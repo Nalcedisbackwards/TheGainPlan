@@ -18,7 +18,7 @@
 
 <body>
   <div class="bg-black text-white py-4 text-center oswaldtext">
-    <a href="index.html"><img src="images/theGainPlanLogo.png" class="logo"></a>
+    <a href="index.html"><img src="images/theGainPlanLogo.png" class="logo" alt="The Gain Plan logo"></a>
     <h1>Game</h1>
   </div>
 
@@ -55,10 +55,8 @@
     <button type="button" id="heads" onclick="flipCoin('heads')" class="btn btn-dark w-25">Heads</button>
 
     <button type="button" id="tails" onclick="flipCoin('tails')" class="btn btn-dark w-25">Tails</button>
-    <br><br><h5 id="gameResult"></h5>
+    <br><br><h5 id="gameResult" aria-live="polite">Game results will appear here</h5>
   </div>
-
-</body>
 
 <script>
   function flipCoin(userChoice) {
@@ -84,5 +82,9 @@
   }
 
 </script>
+
+  
+</body>
+
 
 </html>
