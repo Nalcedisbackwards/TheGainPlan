@@ -18,7 +18,7 @@
 
 <body>
     <div class="bg-black text-white py-4 text-center oswaldtext">
-        <a href="index.html"><img src="images/theGainPlanLogo.png" class="logo"></a>
+        <a href="index.html"><img src="images/theGainPlanLogo.png" class="logo" alt="The Gain Plan logo"></a>
         <h1>Contact Us</h1>
     </div>
 
@@ -52,12 +52,14 @@
     <div class="text-center robototext singleColumn">
         <h4 class="mb-3">Get in Touch for a Free Consultation</h4>
     
-        <ul class="list-unstyled">
-            <li><strong>Email:</strong> <a href="mailto:info@thegainplan.com">info@thegainplan.com</a></li>
-            <li><strong>Call:</strong> <a href="tel:+353877403480">+353 87 740 3480</a></li>
-            <br>
+       
+           
 
             <form id="contactForm" onsubmit="return validateForm()">
+                 <ul class="list-unstyled">
+                    <li><strong>Email:</strong> <a href="mailto:info@thegainplan.com">info@thegainplan.com</a></li>
+                    <li><strong>Call:</strong> <a href="tel:+353877403480">+353 87 740 3480</a></li>
+                </ul> 
                 <div>
                     <label for="name">Name:</label><br>
                     <input type="text" id="name" name="name" required>
@@ -105,7 +107,7 @@
                 <button type="submit" class="btn btn-dark">Submit</button>
             </form>
             <div id="errorMessages" style="color:red; margin-top:10px;"></div>
-        </ul>  
+         
         <script>
             function validateForm() {
                 let errors = [];
